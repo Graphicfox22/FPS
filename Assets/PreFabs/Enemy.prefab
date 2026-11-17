@@ -489,4 +489,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37aab0fd00bb5244499e00d5b84ff87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  target: {fileID: 0}
+  target: {fileID: 3299701096491796152, guid: 0adec4d5e8997d64bb145e14949f19b7, type: 3}
+  chaseRange: 5
