@@ -18,8 +18,14 @@ public class Weapon : MonoBehaviour
     int shootMask;
 
     [SerializeField] private AmmoType ammoType;
+
     [SerializeField] private Ammo ammo;
+    
     [SerializeField] private float damage = 30f;
+
+    [SerializeField] private ParticleSystem muzzleFlash; 
+
+    [SerializeField] private GameObject hitEffect;
 
     // Runs once when the object loads.
     void Awake()
@@ -75,7 +81,8 @@ public class Weapon : MonoBehaviour
 
         // TODO:
         // Muzzle flash effect
-        // Hit effect for visual feedback
+        PlayMuzzleFlash();
+
         // Integrate ammo system
         // Play a "shoot" sound?
     }
@@ -94,13 +101,28 @@ public class Weapon : MonoBehaviour
             print("I hit this: " + hit.transform.name);
             // TODO: damage the target (added in the tutorial)
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                    
+            // Hit effect for visual feedback
+            CreateImpact(hit);
 
-            if(target == null)
-            {
-                return;
-            }
-            
+            //if(target == null)
+            //{
+            //    return;
+            //}
+        
+
             target.TakeDamage(damage); 
         }
     }
+        private void PlayMuzzleFlash()
+        {
+            muzzleFlash.Play();
+        }
+        
+        private void CreateImpact(RaycastHit hit)
+        {
+            GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+            Destroy(impact, 1.0f);
+        }
 }
