@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33055577103928788}
   - component: {fileID: 23700542000555674}
   - component: {fileID: 64180124450936334}
-  - component: {fileID: 7613773105990080850}
+  - component: {fileID: 5320780891416575305}
   m_Layer: 0
   m_Name: dark_stone_6
   m_TagString: Untagged
@@ -114,8 +114,8 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300016, guid: 54538931e655ac542b09d5085a2f33d8, type: 3}
---- !u!136 &7613773105990080850
-CapsuleCollider:
+--- !u!65 &5320780891416575305
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,8 +132,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.44658
-  m_Height: 1.9201984
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 6.89316, y: 1.9201984, z: 1.8180349}
   m_Center: {x: 1.4608679, y: 0.36042276, z: -0.017064095}
